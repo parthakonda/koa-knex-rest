@@ -1,0 +1,71 @@
+{
+    "name": "koa-knex-rest",
+    "version": "1.0.0",
+    "description": "Koa-Knex-Rest skeleton",
+    "main": "src/index.js",
+    "scripts": {
+      "start": "node src/index.js",
+      "dev": "nodemon src/index.js",
+      "test": "NODE_ENV=test jest --verbose",
+      "coverage": "NODE_ENV=test jest --verbose --coverage"
+    },
+    "keywords": [
+      "koa",
+      "knex",
+      "rest",
+      "api"
+    ],
+    "author": "ParthaSaradhiKonda",
+    "license": "MIT",
+    "dependencies": {
+      "bunyan": "^1.8.12",
+      "dotenv": "^8.2.0",
+      "fs-extra": "^8.1.0",
+      "jsonschema": "^1.2.4",
+      "kcors": "^2.2.2",
+      "knex": "^0.20.1",
+      "koa": "^2.8.2",
+      "koa-bodyparser": "^4.2.1",
+      "koa-jwt": "^3.6.0",
+      "koa-router": "^7.4.0",
+      "pg": "^7.12.1",
+    },
+    "devDependencies": {
+      "eslint": "^5.10.0",
+      "eslint-config-standard": "^12.0.0",
+      "eslint-plugin-import": "^2.14.0",
+      "eslint-plugin-jest": "^22.1.2",
+      "eslint-plugin-node": "^8.0.0",
+      "eslint-plugin-promise": "^4.0.1",
+      "eslint-plugin-standard": "^4.0.0",
+      "http-server": "^0.11.1",
+      "husky": "^1.2.1",
+      "jest": "^24.5.0",
+      "lint-staged": "^8.1.0",
+      "nodemon": "^1.18.9",
+      "prettier": "^1.15.3",
+      "supertest": "^4.0.2"
+    },
+    "husky": {
+      "hooks": {
+        "pre-commit": "lint-staged"
+      }
+    },
+    "lint-staged": {
+      "*.js": [
+        "prettier */*/*.js */*.js --write",
+        "./node_modules/eslint/bin/eslint.js src/ tests/ --fix",
+        "git add"
+      ]
+    },
+    "engines": {
+      "node": "12.13.0"
+    },
+    "jest": {
+      "testEnvironment": "node",
+      "coveragePathIgnorePatterns": [
+        "/node_modules/"
+      ]
+    }
+  }
+  
